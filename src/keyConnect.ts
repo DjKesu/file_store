@@ -4,6 +4,9 @@ const keyinfo: KeyInfo = {
     key: "INSECURE API KEY",
 };
 
+(window as any).global = window;
+// @ts-ignore
+window.Buffer = window.Buffer || require('buffer').Buffer;
 
 // function to authorize a client
 async function authorize(keyinfo: KeyInfo, Identity: Identity){
